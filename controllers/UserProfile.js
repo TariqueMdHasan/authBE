@@ -1,7 +1,7 @@
 const User = require('../models/User.js');
 
 const getUserProfile = async (req, res) => {
-    res.send('User Profile Route');
+    
     try{
         const user = await User.findById(req.user.id).select('-password');
         if(!user){
